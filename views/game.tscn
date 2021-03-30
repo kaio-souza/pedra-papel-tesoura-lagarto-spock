@@ -1,0 +1,182 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scripts/game.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/pedra.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/lagarto.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/papel.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/spock.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/tesoura.png" type="Texture" id=6]
+[ext_resource path="res://objects/card.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/images/5270582-4644160274-vs.pn.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/replay.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/fonts/Born2bSportyV2.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 47
+use_mipmaps = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/fonts/Born2bSportyV2.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = SubResource( 3 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_left = -17.0
+margin_top = -9.0
+margin_right = 1042.0
+margin_bottom = 615.0
+color = Color( 0.105882, 0.407843, 0.662745, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Background2" type="ColorRect" parent="."]
+margin_left = -17.0
+margin_top = 439.0
+margin_right = 1042.0
+margin_bottom = 615.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="ColorRect" parent="."]
+margin_left = -6.5199
+margin_top = 439.379
+margin_right = 1030.48
+margin_bottom = 605.379
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pedra" type="TouchScreenButton" parent="Options"]
+position = Vector2( 32.9782, 22.153 )
+scale = Vector2( 0.291471, 0.291471 )
+normal = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Options/Pedra"]
+margin_left = 178.615
+margin_top = 330.892
+margin_right = 283.615
+margin_bottom = 378.892
+custom_fonts/font = SubResource( 2 )
+text = "PEDRA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Papel" type="TouchScreenButton" parent="Options"]
+position = Vector2( 232.046, 22.153 )
+scale = Vector2( 0.291471, 0.291471 )
+normal = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Options/Papel"]
+margin_left = 195.769
+margin_top = 330.892
+margin_right = 300.769
+margin_bottom = 378.892
+custom_fonts/font = SubResource( 2 )
+text = "PAPEL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tesoura" type="TouchScreenButton" parent="Options"]
+position = Vector2( 428.593, 22.153 )
+scale = Vector2( 0.291471, 0.291471 )
+normal = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Options/Tesoura"]
+margin_left = 158.03
+margin_top = 334.323
+margin_right = 305.03
+margin_bottom = 382.323
+custom_fonts/font = SubResource( 2 )
+text = "TESOURA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lagarto" type="TouchScreenButton" parent="Options"]
+position = Vector2( 637.74, 22.153 )
+scale = Vector2( 0.291471, 0.291471 )
+normal = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Options/Lagarto"]
+margin_left = 161.46
+margin_top = 30.3617
+margin_right = 308.46
+margin_bottom = 78.3617
+custom_fonts/font = SubResource( 2 )
+text = "LAGARTO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spock" type="TouchScreenButton" parent="Options"]
+position = Vector2( 843.108, 22.153 )
+scale = Vector2( 0.291471, 0.291471 )
+normal = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Options/Spock"]
+margin_left = 178.615
+margin_top = 22.2017
+margin_right = 283.615
+margin_bottom = 70.2017
+custom_fonts/font = SubResource( 2 )
+text = "SPOCK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerCard" type="Position2D" parent="."]
+position = Vector2( 276.207, 235.124 )
+
+[node name="card" parent="PlayerCard" instance=ExtResource( 7 )]
+position = Vector2( -1.25317, 2.56139 )
+
+[node name="ComputerCard" type="Position2D" parent="."]
+position = Vector2( 766.714, 234.817 )
+
+[node name="card" parent="ComputerCard" instance=ExtResource( 7 )]
+position = Vector2( -1.25317, 2.56139 )
+
+[node name="ResultText" type="Position2D" parent="."]
+position = Vector2( 531.779, 523.842 )
+
+[node name="Vs" type="Sprite" parent="."]
+visible = false
+position = Vector2( 512.472, 222.236 )
+scale = Vector2( 0.381086, 0.381086 )
+texture = ExtResource( 8 )
+
+[node name="Replay" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2( 841.322, 411.137 )
+scale = Vector2( 0.2, 0.2 )
+normal = ExtResource( 9 )
+
+[node name="Placar" type="Label" parent="."]
+margin_left = 19.0
+margin_top = 11.0
+margin_right = 639.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 4 )
+text = "VITÓRIAS: 0    DERROTAS: 0    EMPATES: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Options/Pedra" to="." method="_on_Pedra_pressed"]
+[connection signal="pressed" from="Options/Papel" to="." method="_on_Papel_pressed"]
+[connection signal="pressed" from="Options/Tesoura" to="." method="_on_Tesoura_pressed"]
+[connection signal="pressed" from="Options/Lagarto" to="." method="_on_Lagarto_pressed"]
+[connection signal="pressed" from="Options/Spock" to="." method="_on_Spock_pressed"]
+[connection signal="pressed" from="Replay" to="." method="_on_Replay_pressed"]
