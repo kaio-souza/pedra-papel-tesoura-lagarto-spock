@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Pedra-papel-tesoura-lagarto-spock"
+run/main_scene="res://views/home.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
+Websocket="*res://scripts/plugins/websocket.gd"
+
+[display]
+
+window/stretch/mode="2d"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+environment/default_clear_color=Color( 0.105882, 0.407843, 0.662745, 1 )

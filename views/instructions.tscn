@@ -20,22 +20,11 @@ font_data = SubResource( 3 )
 [node name="Instructions" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="BlueBackground" type="ColorRect" parent="."]
-margin_left = -7.0
-margin_top = -8.0
-margin_right = 1031.0
-margin_bottom = 622.0
-color = Color( 0.105882, 0.407843, 0.662745, 1 )
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
 [node name="WhiteBackground" type="ColorRect" parent="."]
 margin_left = 662.0
 margin_top = -6.0
-margin_right = 1059.0
-margin_bottom = 610.0
+margin_right = 1180.0
+margin_bottom = 640.0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
